@@ -65,50 +65,50 @@
         /// <summary>
         /// Foreground colors
         /// </summary>
-        public static string fgBlack   = $"\u001b[{ifgblack + (int)Clr.black}m";
-        public static string fgRed     = $"\u001b[{ifgblack + (int)Clr.red}m";
-        public static string fgGreen   = $"\u001b[{ifgblack + (int)Clr.green}m";
-        public static string fgYellow  = $"\u001b[{ifgblack + (int)Clr.yellow}m";
-        public static string fgblue    = $"\u001b[{ifgblack + (int)Clr.blue}m";
-        public static string fgMagenta = $"\u001b[{ifgblack + (int)Clr.magenta}m";
-        public static string fgCyan    = $"\u001b[{ifgblack + (int)Clr.cyan}m";
-        public static string fgWhite   = $"\u001b[{ifgblack + (int)Clr.white}m";
+        public static string fgBla  = $"\u001b[{ifgblack + (int)Clr.black}m";
+        public static string fgRed  = $"\u001b[{ifgblack + (int)Clr.red}m";
+        public static string fgGre  = $"\u001b[{ifgblack + (int)Clr.green}m";
+        public static string fgYel  = $"\u001b[{ifgblack + (int)Clr.yellow}m";
+        public static string fgblu  = $"\u001b[{ifgblack + (int)Clr.blue}m";
+        public static string fgMag  = $"\u001b[{ifgblack + (int)Clr.magenta}m";
+        public static string fgCya  = $"\u001b[{ifgblack + (int)Clr.cyan}m";
+        public static string fgWhi  = $"\u001b[{ifgblack + (int)Clr.white}m";
 
         /// <summary>
         /// Background colors
         /// </summary>
-        public static string bgBlack = $"\u001b[{ibgblack + (int)Clr.black}m";
+        public static string bgBla = $"\u001b[{ibgblack + (int)Clr.black}m";
         public static string bgRed = $"\u001b[{ibgblack + (int)Clr.red}m";
-        public static string bgGreen = $"\u001b[{ibgblack + (int)Clr.green}m";
-        public static string bgYellow = $"\u001b[{ibgblack + (int)Clr.yellow}m";
-        public static string bgblue = $"\u001b[{ibgblack + (int)Clr.blue}m";
-        public static string bgMagenta = $"\u001b[{ibgblack + (int)Clr.magenta}m";
-        public static string bgCyan = $"\u001b[{ibgblack + (int)Clr.cyan}m";
-        public static string bgWhite = $"\u001b[{ibgblack + (int)Clr.white}m";
+        public static string bgGre = $"\u001b[{ibgblack + (int)Clr.green}m";
+        public static string bgYel = $"\u001b[{ibgblack + (int)Clr.yellow}m";
+        public static string bgblu = $"\u001b[{ibgblack + (int)Clr.blue}m";
+        public static string bgMag = $"\u001b[{ibgblack + (int)Clr.magenta}m";
+        public static string bgCya = $"\u001b[{ibgblack + (int)Clr.cyan}m";
+        public static string bgWhi = $"\u001b[{ibgblack + (int)Clr.white}m";
 
         /// <summary>
         /// Bold Foreground colors
         /// </summary>
-        public static string boldfgBlack = $"\u001b[{ibfgblack + (int)Clr.black}m";
-        public static string boldfgRed = $"\u001b[{ibfgblack + (int)Clr.red}m";
-        public static string boldfgGreen = $"\u001b[{ibfgblack + (int)Clr.green}m";
-        public static string boldfgYellow = $"\u001b[{ibfgblack + (int)Clr.yellow}m";
-        public static string boldfgblue = $"\u001b[{ibfgblack + (int)Clr.blue}m";
-        public static string boldfgMagenta = $"\u001b[{ibfgblack + (int)Clr.magenta}m";
-        public static string boldfgCyan = $"\u001b[{ibfgblack + (int)Clr.cyan}m";
-        public static string boldfgWhite = $"\u001b[{ibfgblack + (int)Clr.white}m";
+        public static string bfgBla = $"\u001b[{ibfgblack + (int)Clr.black}m";
+        public static string bfgRed = $"\u001b[{ibfgblack + (int)Clr.red}m";
+        public static string bfgGre = $"\u001b[{ibfgblack + (int)Clr.green}m";
+        public static string bfgYel = $"\u001b[{ibfgblack + (int)Clr.yellow}m";
+        public static string bfgblu = $"\u001b[{ibfgblack + (int)Clr.blue}m";
+        public static string bfgMag = $"\u001b[{ibfgblack + (int)Clr.magenta}m";
+        public static string bfgCya = $"\u001b[{ibfgblack + (int)Clr.cyan}m";
+        public static string bfgWhi = $"\u001b[{ibfgblack + (int)Clr.white}m";
 
         /// <summary>
         /// Bold Background colors
         /// </summary>
-        public static string boldbgBlack = $"\u001b[{ibbgblack + (int)Clr.black}m";
-        public static string boldbgRed = $"\u001b[{ibbgblack + (int)Clr.red}m";
-        public static string boldbgGreen = $"\u001b[{ibbgblack + (int)Clr.green}m";
-        public static string boldbgYellow = $"\u001b[{ibbgblack + (int)Clr.yellow}m";
-        public static string bboldbgblue = $"\u001b[{ibbgblack + (int)Clr.blue}m";
-        public static string bboldbgMagenta = $"\u001b[{ibbgblack + (int)Clr.magenta}m";
-        public static string bboldbgCyan = $"\u001b[{ibbgblack + (int)Clr.cyan}m";
-        public static string boldbgWhite = $"\u001b[{ibbgblack + (int)Clr.white}m";
+        public static string bbgBla = $"\u001b[{ibbgblack + (int)Clr.black}m";
+        public static string bbgRed = $"\u001b[{ibbgblack + (int)Clr.red}m";
+        public static string bbgGre = $"\u001b[{ibbgblack + (int)Clr.green}m";
+        public static string bbgYel = $"\u001b[{ibbgblack + (int)Clr.yellow}m";
+        public static string bbgblu = $"\u001b[{ibbgblack + (int)Clr.blue}m";
+        public static string bbgMag = $"\u001b[{ibbgblack + (int)Clr.magenta}m";
+        public static string bbgCya = $"\u001b[{ibbgblack + (int)Clr.cyan}m";
+        public static string bbgWhi = $"\u001b[{ibbgblack + (int)Clr.white}m";
 
         //////////////////////////////////////////////////////////////
 
