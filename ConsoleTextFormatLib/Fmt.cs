@@ -10,6 +10,23 @@
     public static class Fmt 
     {
         /// <summary>
+        /// Clear the console
+        /// </summary>
+        public static void Clear()
+        {
+            Console.Clear();
+        }
+        /// <summary>
+        /// Reset all formatting
+        /// </summary>
+        public static void Reset()
+        {
+            Console.ResetColor();
+        }
+
+        //////////////////////////////////////////////////////////////
+
+        /// <summary>
         /// Clear all formatting
         /// </summary>
         public const string clear = "\u001b[0m";
@@ -37,13 +54,64 @@
         /// [Positive] Foreground/Background to normal
         /// </summary>
         public const string _n = "\u001b[27m";
-        // public const string fgblack = "\u001b[30m";
-        // public const string bgblack = "\u001b[40m";
 
-        private const int fgblack = 30;
-        private const int bgblack = 40;
-        private const int bfgblack = 60;
-        private const int bbgblack = 70;
+        //////////////////////////////////////////////////////////////
+
+        private const int ifgblack = 30;
+        private const int ibgblack = ifgblack + 10;
+        private const int ibfgblack = ifgblack + 30;
+        private const int ibbgblack = ibfgblack + 10;
+
+        /// <summary>
+        /// Foreground colors
+        /// </summary>
+        public static string fgBlack   = $"\u001b[{ifgblack + (int)Clr.black}m";
+        public static string fgRed     = $"\u001b[{ifgblack + (int)Clr.red}m";
+        public static string fgGreen   = $"\u001b[{ifgblack + (int)Clr.green}m";
+        public static string fgYellow  = $"\u001b[{ifgblack + (int)Clr.yellow}m";
+        public static string fgblue    = $"\u001b[{ifgblack + (int)Clr.blue}m";
+        public static string fgMagenta = $"\u001b[{ifgblack + (int)Clr.magenta}m";
+        public static string fgCyan    = $"\u001b[{ifgblack + (int)Clr.cyan}m";
+        public static string fgWhite   = $"\u001b[{ifgblack + (int)Clr.white}m";
+
+        /// <summary>
+        /// Background colors
+        /// </summary>
+        public static string bgBlack = $"\u001b[{ibgblack + (int)Clr.black}m";
+        public static string bgRed = $"\u001b[{ibgblack + (int)Clr.red}m";
+        public static string bgGreen = $"\u001b[{ibgblack + (int)Clr.green}m";
+        public static string bgYellow = $"\u001b[{ibgblack + (int)Clr.yellow}m";
+        public static string bgblue = $"\u001b[{ibgblack + (int)Clr.blue}m";
+        public static string bgMagenta = $"\u001b[{ibgblack + (int)Clr.magenta}m";
+        public static string bgCyan = $"\u001b[{ibgblack + (int)Clr.cyan}m";
+        public static string bgWhite = $"\u001b[{ibgblack + (int)Clr.white}m";
+
+        /// <summary>
+        /// Bold Foreground colors
+        /// </summary>
+        public static string boldfgBlack = $"\u001b[{ibfgblack + (int)Clr.black}m";
+        public static string boldfgRed = $"\u001b[{ibfgblack + (int)Clr.red}m";
+        public static string boldfgGreen = $"\u001b[{ibfgblack + (int)Clr.green}m";
+        public static string boldfgYellow = $"\u001b[{ibfgblack + (int)Clr.yellow}m";
+        public static string boldfgblue = $"\u001b[{ibfgblack + (int)Clr.blue}m";
+        public static string boldfgMagenta = $"\u001b[{ibfgblack + (int)Clr.magenta}m";
+        public static string boldfgCyan = $"\u001b[{ibfgblack + (int)Clr.cyan}m";
+        public static string boldfgWhite = $"\u001b[{ibfgblack + (int)Clr.white}m";
+
+        /// <summary>
+        /// Bold Background colors
+        /// </summary>
+        public static string boldbgBlack = $"\u001b[{ibbgblack + (int)Clr.black}m";
+        public static string boldbgRed = $"\u001b[{ibbgblack + (int)Clr.red}m";
+        public static string boldbgGreen = $"\u001b[{ibbgblack + (int)Clr.green}m";
+        public static string boldbgYellow = $"\u001b[{ibbgblack + (int)Clr.yellow}m";
+        public static string bboldbgblue = $"\u001b[{ibbgblack + (int)Clr.blue}m";
+        public static string bboldbgMagenta = $"\u001b[{ibbgblack + (int)Clr.magenta}m";
+        public static string bboldbgCyan = $"\u001b[{ibbgblack + (int)Clr.cyan}m";
+        public static string boldbgWhite = $"\u001b[{ibbgblack + (int)Clr.white}m";
+
+        //////////////////////////////////////////////////////////////
+
 
         /// <summary>
         /// Foreground/Background Format colors
@@ -55,24 +123,24 @@
         /// </summary>
         /// <param name="clr"></param>
         /// <returns></returns>
-        public static string fg(Clr clr) { return $"\u001b[{fgblack + (int)clr}m"; }
+        public static string fg(Clr clr) { return $"\u001b[{ifgblack + (int)clr}m"; }
         /// <summary>
         /// Set background color
         /// </summary>
         /// <param name="clr"></param>
         /// <returns></returns>
-        public static string bg(Clr clr) { return $"\u001b[{bgblack + (int)clr}m"; }
+        public static string bg(Clr clr) { return $"\u001b[{ibgblack + (int)clr}m"; }
         /// <summary>
         /// Set bold foreground color
         /// </summary>
         /// <param name="clr">Color</param>
         /// <returns></returns>
-        public static string bfg(Clr clr) { return $"\u001b[{bfgblack + (int)clr}m"; }
+        public static string bfg(Clr clr) { return $"\u001b[{ibfgblack + (int)clr}m"; }
         /// <summary>
         /// Set bold background color
         /// </summary>
         /// <param name="clr">Color</param>
         /// <returns></returns>
-        public static string bbg(Clr clr) { return $"\u001b[{bbgblack + (int)clr}m"; }
+        public static string bbg(Clr clr) { return $"\u001b[{ibbgblack + (int)clr}m"; }
     }
 }
