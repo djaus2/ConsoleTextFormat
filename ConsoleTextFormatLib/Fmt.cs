@@ -53,26 +53,26 @@
         /// <summary>
         /// Set foreground color
         /// </summary>
-        /// <param name="c"></param>
+        /// <param name="clr"></param>
         /// <returns></returns>
-        public static string fg(Clr c) { return $"\u001b[{fgblack + (int)c}m"; }
+        public static string fg(Clr clr) { return $"\u001b[{fgblack + (int)clr}m"; }
         /// <summary>
         /// Set background color
         /// </summary>
-        /// <param name="c"></param>
+        /// <param name="clr"></param>
         /// <returns></returns>
-        public static string bg(Clr c) { return $"\u001b[{bgblack + (int)c}m"; }
+        public static string bg(Clr clr) { return $"\u001b[{bgblack + (int)clr}m"; }
         /// <summary>
         /// Set bold foreground color
         /// </summary>
-        /// <param name="c">Color</param>
+        /// <param name="clr">Color</param>
         /// <returns></returns>
-        public static string bfg(Clr c) { return $"\u001b[{bfgblack + (int)c}m"; }
+        public static string bfg(Clr clr) { return $"\u001b[{bfgblack + (int)clr}m"; }
         /// <summary>
         /// Set bold background color
         /// </summary>
-        /// <param name="c">Color</param>
+        /// <param name="clr">Color</param>
         /// <returns></returns>
-        public static string bbg(Clr c) { return $"\u001b[{bbgblack + (int)c}m"; }
+        public static string bbg(Clr clr) { return $"\u001b[{bbgblack + (int)clr}m"; }
     }
 }
