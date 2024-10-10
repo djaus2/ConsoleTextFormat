@@ -4,7 +4,7 @@
 
 A simple static class libray facilitating 
 .NET Console app text formatting in ```Console.Write()``` 
-and ```Console.WriteLine9()``` statements without explicitly using escape codes.
+and ```Console.WriteLine()``` statements without explicitly using escape codes.
 
 ## Link
 [Console Virtual Terminal Sequences: MS Learn Ref](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences)
