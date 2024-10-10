@@ -1,4 +1,5 @@
 ﻿using B = ConsoleTextFormat.Fmt.Bold;
+using F = ConsoleTextFormat.Fmt;
 namespace ConsoleApp9
 {
     using System;
@@ -13,6 +14,7 @@ namespace ConsoleApp9
             Console.WriteLine($"{Fmt.fg(Fmt.Col.yellow)}Hello, {Fmt.b}World!{Fmt._b}{Fmt.clear}");
             Console.WriteLine($"{Fmt.fg(Fmt.Col.blue)}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{B.fgRed}{B.bgCya}Hello, {Fmt.clear}World!");
+            Console.WriteLine($"{F.fgRed}{F.bgCya}Hello, {Fmt.clear}World!");
         }
     }
 }

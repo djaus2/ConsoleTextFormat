@@ -71,6 +71,7 @@
         private const int ibfgblack = 90;
         private const int ibbgblack = ibfgblack + 10;
 
+
         /// <summary>
         /// Foreground Black
         /// <code>${Fmt.fgBla}Hello{Fmt.Col}</code>
@@ -112,6 +113,7 @@
         /// </summary
         public static string fgWhi = $"\u001b[{ifgblack + (int)Col.white}m";
 
+
         /// <summary>
         /// Background colors
         /// <code>${Fmt.bgWhi}Hello{Fmt.Col}</code
@@ -124,6 +126,7 @@
         public static string bgMag = $"\u001b[{ibgblack + (int)Col.magenta}m";
         public static string bgCya = $"\u001b[{ibgblack + (int)Col.cyan}m";
         public static string bgWhi = $"\u001b[{ibgblack + (int)Col.white}m";
+        
 
         /// <summary>
         /// Bold fg/bg colors
