@@ -7,9 +7,11 @@ namespace ConsoleApp9
 
     internal class Program
     {
-
         static void Main(string[] args)
         {
+            Fmt.Heading("Hello, World!",Fmt.Col.yellow, Fmt.Col.blue);
+            Fmt.RainbowHeading("Hello, World!", Fmt.Col.yellow);
+            Fmt.Info("This is a topic:", "Information");
             Console.WriteLine($"{Fmt.bg(Fmt.Col.white)}Hello, {Fmt.b}World!{Fmt._b}{Fmt.clear}");
             Console.WriteLine($"{Fmt.fg(Fmt.Col.yellow)}Hello, {Fmt.b}World!{Fmt._b}{Fmt.clear}");
             Console.WriteLine($"{Fmt.fg(Fmt.Col.blue)}Hello, {Fmt.clear}World!");

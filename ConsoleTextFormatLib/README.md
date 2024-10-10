@@ -56,7 +56,7 @@ namespace ConsoleApp9
 ```
 
 
-[Image of running app](https://github.com/djaus2/ConsoleTextFormat/raw/master/consoleformat.png)  
+![Consoleformat](consoleformat.png)  
 **_Console app output_**
 
 ## Updates
