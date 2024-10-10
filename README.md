@@ -7,7 +7,7 @@ A simple static class libray facilitating
 and ```Console.WriteLine()``` statements without explicitly using escape codes.
 
 ## Link
-[Console Virtual Terminal Sequences: MS Learn Ref](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences)
+[Console Virtual Terminal Sequences: MS Learn Ref](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences?wt.mc_id=WDIT-MVP-5000301)
 
 ## About
 Whilst there are same Console class methods for setting text and background colors, there are no methods for setting text attributes such as bold, underline, etc. This library provides a simple way to do this.
