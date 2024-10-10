@@ -52,3 +52,6 @@ namespace ConsoleApp9
     }
 }
 ```
+
+![Consoleformat](consoleformat.png)  
+**_Console app output_**
