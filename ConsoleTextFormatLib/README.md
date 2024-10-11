@@ -54,8 +54,8 @@ namespace ConsoleApp9
     }
 }
 ```
-
-![Consoleformat](consoleformat.png)
+[//]: # ![Consoleformat](consoleformat.png)
+[Comment]: <> ![Consoleformat](consoleformat.png)
 [Image of running app](https://github.com/djaus2/ConsoleTextFormat/raw/master/consoleformat.png)  
 **_Console app output_**
 
