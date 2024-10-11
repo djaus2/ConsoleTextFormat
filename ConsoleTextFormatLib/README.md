@@ -1,6 +1,6 @@
 # ConsoleTextFormat
 
-## About
+## Summary
 
 A simple static class library facilitating 
 .NET Console app text formatting in ```Console.Write()``` 
