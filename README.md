@@ -45,7 +45,7 @@ namespace ConsoleApp9
         {
             Fmt.Heading("Hello, World!",Fmt.Col.yellow, Fmt.Col.blue);
             Fmt.RainbowHeading("Hello, World!", Fmt.Col.yellow);
-            Console.WriteLine($"{Fmt.bg(Fmt.Col.white)}Hello, {Fmt.b}World!{Fmt._b}{Fmt.clear}");
+            Fmt.Info("This is a topic:", "Information");            Console.WriteLine($"{Fmt.bg(Fmt.Col.white)}Hello, {Fmt.b}World!{Fmt._b}{Fmt.clear}");
             Console.WriteLine($"{Fmt.fg(Fmt.Col.yellow)}Hello, {Fmt.b}World!{Fmt._b}{Fmt.clear}");
             Console.WriteLine($"{Fmt.fg(Fmt.Col.blue)}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{B.fgRed}{B.bgCya}Hello, {Fmt.clear}World!");
@@ -55,8 +55,8 @@ namespace ConsoleApp9
 }
 ```
 
-
-[Image of running app](https://github.com/djaus2/ConsoleTextFormat/raw/master/consoleformat.png)  
+![Consoleformat](consoleformat.png)
+![Image of running app](https://github.com/djaus2/ConsoleTextFormat/raw/master/consoleformat.png)  
 **_Console app output_**
 
 ## Updates

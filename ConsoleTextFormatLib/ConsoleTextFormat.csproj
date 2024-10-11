@@ -19,6 +19,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\consoleformat.png" Link="consoleformat.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\ConsoleTextFormat2\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
