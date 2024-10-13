@@ -68,4 +68,4 @@ namespace ConsoleApp9
 - 2021-09-07: Added ```Fmt.Heading()``` and ```Fmt.RainbowHeading()``` methods to format text as headings.
 - 2021-09-07: Added ```Fmt.Info(topic,info)``` method.
 - 2021-09-13: Added ```Press2Con``` "Press any key to continue" method. Optional messages to pre and post pend. Also, Info() 2nd parameter IS optional.
-- 2021-09-13: Added ```Prompt()``` added. As per Info() but no newline. Heading clears screen. And '_' in heading to blank.
+- 2021-09-13: Added ```Prompt()``` added. As per Info() but no newline. Heading clears screen. Clr heading and '_' in heading to blank.
