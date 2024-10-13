@@ -32,6 +32,17 @@ namespace ConsoleTextFormat
         }
 
         /// <summary>
+        /// Press any key to continue
+        /// </summary>
+        /// <param name="msg=\"\"">Additional msg that can be appended</param>
+        public static void Press2con(string msg="")
+        {
+            Console.Write($"{bgGre}{Bold.fgWhi}{b}Press any key to continue {msg}{clr}");
+            Console.ReadKey();
+            Console.WriteLine();
+        }
+
+        /// <summary>
         /// Write heading in text color with background color
         /// </summary>
         /// <param name="heading">Heading</param>
@@ -210,7 +221,7 @@ namespace ConsoleTextFormat
         public static string bgRed = $"\u001b[{ibgblack + (int)Col.red}m";
         public static string bgGre = $"\u001b[{ibgblack + (int)Col.green}m";
         public static string bgYel = $"\u001b[{ibgblack + (int)Col.yellow}m";
-        public static string bgblu = $"\u001b[{ibgblack + (int)Col.blue}m";
+        public static string bgBlu = $"\u001b[{ibgblack + (int)Col.blue}m";
         public static string bgMag = $"\u001b[{ibgblack + (int)Col.magenta}m";
         public static string bgCya = $"\u001b[{ibgblack + (int)Col.cyan}m";
         public static string bgWhi = $"\u001b[{ibgblack + (int)Col.white}m";

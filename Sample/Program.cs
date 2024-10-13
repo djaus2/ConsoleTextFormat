@@ -17,6 +17,8 @@ namespace ConsoleApp9
             Console.WriteLine($"{Fmt.fg(Fmt.Col.blue)}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{B.fgRed}{B.bgCya}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{F.fgRed}{F.bgCya}Hello, {Fmt.clear}World!");
+            Fmt.Press2con();
+            Fmt.Press2con("when ready.");
         }
     }
 }

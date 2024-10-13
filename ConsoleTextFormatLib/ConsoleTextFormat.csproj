@@ -14,8 +14,8 @@
     <PackageTags>console;csharp;dnet;format;text</PackageTags>
     <Copyright>(C) 2024 David Jones</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Version>1.0.3.2</Version>
-    <PackageReleaseNotes>Update of ReadMe image link only</PackageReleaseNotes>
+    <Version>1.0.3.3</Version>
+    <PackageReleaseNotes>ReadMe: Add link to blog post</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 

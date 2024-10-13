@@ -6,8 +6,10 @@ A simple static class library facilitating
 .NET Console app text formatting in ```Console.Write()``` 
 and ```Console.WriteLine()``` statements without explicitly using escape codes.
 
-## Link
-[Console Virtual Terminal Sequences: MS Learn Ref](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences?wt.mc_id=WDIT-MVP-5000301)
+## Links
+
+- [Detailed blog post](https://davidjones.sportronics.com.au/coding/ConsoleTextFormat-Formatting_Console_App_Text-coding.html)
+- [Console Virtual Terminal Sequences: MS Learn Ref](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences?wt.mc_id=WDIT-MVP-5000301)
 
 ## About
 Whilst there are same Console class methods for setting text and background colors, there are no methods for setting text attributes such as bold, underline, etc. This library provides a simple way to do this.
@@ -51,15 +53,19 @@ namespace ConsoleApp9
             Console.WriteLine($"{Fmt.fg(Fmt.Col.blue)}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{B.fgRed}{B.bgCya}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{F.fgRed}{F.bgCya}Hello, {Fmt.clear}World!");
-        }
+            Fmt.Press2con();
+            Fmt.Press2con("when ready."); 
+       }
     }
 }
 ```
 
-![Image of running app](consoleformat.png)  
+[Image of running app](https://davidjones.sportronics.com.au/media/consoleformat.png)  
 **_Console app output_**
 
 ## Updates
 
 - 2021-09-07: Added ```Fmt.Heading()``` and ```Fmt.RainbowHeading()``` methods to format text as headings.
 - 2021-09-07: Added ```Fmt.Info(topic,info)``` added.
+- 2021-09-13: Added ```Press2Con``` "Press any key to continue" method. Optional meassge to append.
+- 
