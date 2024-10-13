@@ -14,8 +14,8 @@
     <PackageTags>console;csharp;dnet;format;text</PackageTags>
     <Copyright>(C) 2024 David Jones</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Version>1.0.3.6</Version>
-    <PackageReleaseNotes>ReadMe: Add link to blog post</PackageReleaseNotes>
+    <Version>1.0.3.7</Version>
+    <PackageReleaseNotes>Added ```Press2Con``` "Press any key to continue" method. Optional messages to pre and post pend. Also, Info() 2nd parameter IS optional.</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 

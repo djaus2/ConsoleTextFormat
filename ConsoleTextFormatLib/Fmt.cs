@@ -110,7 +110,7 @@ namespace ConsoleTextFormat
             Reset();
         }
 
-        public static void Info(string topic, string info, Col topictcol = Col.blue, Col infocol= Col.yellow)
+        public static void Info(string topic, string info="", Col topictcol = Col.blue, Col infocol= Col.yellow)
         {
             Reset();
             Console.Write($"{fg(topictcol)}{topic}");
