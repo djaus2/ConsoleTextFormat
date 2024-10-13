@@ -52,7 +52,9 @@ namespace ConsoleTextFormat
         /// <param name="backcol">Background Color</param>
         public static void Heading(string heading, Col col = Col.white, Col backcol = Col.black)
         {
+            heading = heading.Replace("_", " ");
             Reset(); 
+            Console.Clear();
             int c = (int)backcol;
             while (col == (Col)c) 
             {
@@ -85,7 +87,9 @@ namespace ConsoleTextFormat
         /// <param name="backcol">Background color</param>
         public static void RainbowHeading(string heading, Col backcol= Col.black)
         {
+            heading = heading.Replace("_", " ");
             Reset();
+            Console.Clear();
             int c = -1;
             Console.Write($"{bg(backcol)}");//Background
             for(int i = 0; i < heading.Length; i++)
@@ -112,6 +116,12 @@ namespace ConsoleTextFormat
 
         public static void Info(string topic, string info="", Col topictcol = Col.blue, Col infocol= Col.yellow)
         {
+            Prompt(topic, info, topictcol, infocol);
+            Console.WriteLine();
+            Reset();
+        }
+        public static void Prompt(string topic, string info = "", Col topictcol = Col.blue, Col infocol = Col.yellow)
+        {
             Reset();
             Console.Write($"{fg(topictcol)}{topic}");
 
@@ -124,10 +134,9 @@ namespace ConsoleTextFormat
                     c = 0;
             }
             infocol = (Col)c;
-            Console.WriteLine($"{fg(infocol)}{info}");
+            Console.Write($"{fg(infocol)}{info}");
             Reset();
         }
-
 
 
         //////////////////////////////////////////////////////////////
