@@ -67,5 +67,5 @@ namespace ConsoleApp9
 
 - 2021-09-07: Added ```Fmt.Heading()``` and ```Fmt.RainbowHeading()``` methods to format text as headings.
 - 2021-09-07: Added ```Fmt.Info(topic,info)``` added.
-- 2021-09-13: Added ```Press2Con``` "Press any key to continue" method. Optional meassge to append.
+- 2021-09-13: Added ```Press2Con``` "Press any key to continue" method. Optional messages to pre and post pend.
 - 

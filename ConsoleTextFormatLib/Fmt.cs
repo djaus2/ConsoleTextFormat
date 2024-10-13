@@ -35,9 +35,11 @@ namespace ConsoleTextFormat
         /// Press any key to continue
         /// </summary>
         /// <param name="msg=\"\"">Additional msg that can be appended</param>
-        public static void Press2con(string msg="")
+        public static void Press2con(string premsg="", string postmsg="")
         {
-            Console.Write($"{bgGre}{Bold.fgWhi}{b}Press any key to continue {msg}{clr}");
+            string fs = ". ";
+            if (premsg == "") fs = "";
+            Console.Write($"{bgGre}{Bold.fgWhi}{b}{premsg}{fs}Press any key to continue {postmsg}{clr}");
             Console.ReadKey();
             Console.WriteLine();
         }

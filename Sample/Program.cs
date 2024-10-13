@@ -18,7 +18,9 @@ namespace ConsoleApp9
             Console.WriteLine($"{B.fgRed}{B.bgCya}Hello, {Fmt.clear}World!");
             Console.WriteLine($"{F.fgRed}{F.bgCya}Hello, {Fmt.clear}World!");
             Fmt.Press2con();
-            Fmt.Press2con("when ready.");
+            Fmt.Press2con("Wait for completion");
+            Fmt.Press2con("","when ready.");
+            Fmt.Press2con("Wait for completion", "when ready.");
         }
     }
 }
