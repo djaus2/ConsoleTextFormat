@@ -2,8 +2,6 @@
 
 namespace ConsoleTextFormat
 {
-
-
     /// <summary>
     /// Format a Console app's text
     /// <para>i.e. In Console.Write/ln()</para>
@@ -31,116 +29,17 @@ namespace ConsoleTextFormat
             Console.ResetColor();
         }
 
-        /// <summary>
-        /// Press any key to continue
-        /// </summary>
-        /// <param name="msg=\"\"">Additional msg that can be appended</param>
-        public static void Press2con(string premsg="", string postmsg="")
-        {
-            string fs = ". ";
-            if (premsg == "") fs = "";
-            Console.Write($"{bgGre}{Bold.fgWhi}{b}{premsg}{fs}Press any key to continue {postmsg}{clr}");
-            Console.ReadKey();
-            Console.WriteLine();
-        }
-
-        /// <summary>
-        /// Write heading in text color with background color
-        /// </summary>
-        /// <param name="heading">Heading</param>
-        /// <param name="col">Text Color </param>
-        /// <param name="backcol">Background Color</param>
-        public static void Heading(string heading, Col col = Col.white, Col backcol = Col.black)
-        {
-            heading = heading.Replace("_", " ");
-            Reset(); 
-            Console.Clear();
-            int c = (int)backcol;
-            while (col == (Col)c) 
-            {
-                c++;
-                if (c >= 8)
-                    c = 0;
-            }
-            backcol = (Col)c;
-            Console.Write($"{bg(backcol)}");//Background
-            for (int i = 0; i < heading.Length; i++)
-            {
-                if (heading[i] == ' ')
-                    Console.Write("  ");
-                else
-                {
-                    Console.Write($"{fg(col)}{heading[i]}");
-                    if (Char.IsAscii(heading[i]))
-                        Console.Write(" ");
-                }
-;
-            }
-            Console.WriteLine();
-            Reset();
-        }
-
-        /// <summary>
-        /// Write heading in rainbow colors with space between each letter
-        /// </summary>
-        /// <param name="heading">Heading</param>
-        /// <param name="backcol">Background color</param>
-        public static void RainbowHeading(string heading, Col backcol= Col.black)
-        {
-            heading = heading.Replace("_", " ");
-            Reset();
-            Console.Clear();
-            int c = -1;
-            Console.Write($"{bg(backcol)}");//Background
-            for(int i = 0; i < heading.Length; i++)
-            {
-                if (heading[i] == ' ')
-                    Console.Write("  ");
-                else
-                {
-                    do
-                    {
-                        c++;
-                        if (c >= 8)
-                            c = 0;
-                    }
-                    while (backcol == (Col)c);
-                    Console.Write($"{fg((Col)c)}{heading[i]}");
-                    if (Char.IsAscii(heading[i]))
-                        Console.Write(" ");
-                }
-            }
-            Console.WriteLine();
-            Reset();
-        }
-
-        public static void Info(string topic, string info="", Col topictcol = Col.blue, Col infocol= Col.yellow)
-        {
-            Prompt(topic, info, topictcol, infocol);
-            Console.WriteLine();
-            Reset();
-        }
-        public static void Prompt(string topic, string info = "", Col topictcol = Col.blue, Col infocol = Col.yellow)
-        {
-            Reset();
-            Console.Write($"{fg(topictcol)}{topic}");
-
-            // Make sure colors are different
-            int c = (int)infocol;
-            while (topictcol == (Col)c)
-            {
-                c++;
-                if (c >= 8)
-                    c = 0;
-            }
-            infocol = (Col)c;
-            Console.Write($"{fg(infocol)}{info}");
-            Reset();
-        }
 
 
         //////////////////////////////////////////////////////////////
+        //ESC [ 3 ~
+        public const string delete = "\u001b[3~";
 
+        /// <summary>
+        /// Cursor Back one
+        /// ESC [ <n> D
+        /// </summary>
+        public const string cursorBack = "\u001b[1D";
         /// <summary>
         /// Clear all formatting
         /// </summary>
