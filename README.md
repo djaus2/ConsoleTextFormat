@@ -8,6 +8,7 @@ and ```Console.WriteLine()``` statements without explicitly using escape codes.
 
 ## Links
 
+- Nuget Package: [ConsoleTextFormat](https://www.nuget.org/packages/ConsoleTextFormat)
 - [Detailed blog post](https://davidjones.sportronics.com.au/coding/ConsoleTextFormat-Formatting_Console_App_Text-coding.html)
 - [Console Virtual Terminal Sequences: MS Learn Ref](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences?wt.mc_id=WDIT-MVP-5000301)
 
