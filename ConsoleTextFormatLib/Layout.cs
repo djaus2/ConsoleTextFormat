@@ -130,6 +130,17 @@ namespace ConsoleTextFormat
             Console.WriteLine();
         }
 
+        private static List<string> MenuItemsToHide = new List<string>();
+
+        public static void AddHideMenuItems(string item)
+        {
+            MenuItemsToHide.Add(item.ToLower().Replace("_", " "));
+        }
+        public static void ClearHideMenuItems(string item)
+        {
+            MenuItemsToHide = new List<string>();
+        }
+
         /// <summary>
         /// Generate a List<tring></tring> of menu items from an enum
         /// </summary>
@@ -141,13 +152,19 @@ namespace ConsoleTextFormat
             List<string> list = new List<string>();
             if (values != null)
             {
-                foreach (var x in values)
+
+               //var Values = values.
+                foreach (var menuItem in values)
                 {
-                    if (x != null)
+                    if (menuItem != null)
                     {
-                        var msg = $"{x}".Replace("_", " ");
+                        var msg = $"{menuItem}".Replace("_", " ");
+                        if (MenuItemsToHide.Contains(msg.ToLower()))
+                            continue;
                         if (!string.IsNullOrEmpty(msg))
+                        {
                             list.Add(msg);
+                        }
                     }
                 }
             }

@@ -36,6 +36,8 @@ namespace ConsoleApp9
             if (menuResp < 0)
                 return; //Quit
             bool quit = false;
+            //fish is hidden so won't show in next menu.
+            Layout.AddHideMenuItems("fish");
             Animals vv = Layout.SelectEnum<Animals>(2, ref quit, true);
             if (quit)
                 return;

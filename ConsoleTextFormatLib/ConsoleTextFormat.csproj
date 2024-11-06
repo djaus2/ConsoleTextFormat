@@ -12,10 +12,10 @@
     <RepositoryUrl>https://github.com/djaus2/ConsoleTextFormat/tree/master/ConsoleTextFormatLib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>console;csharp;dnet;format;text</PackageTags>
-    <Copyright>(C) 2024 David Jones</Copyright>
+    <Copyright>(C)2024 David Jones</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Version>1.0.4</Version>
-    <PackageReleaseNotes>Added ```Prompt()``` added. As per Inofo() but no newline.</PackageReleaseNotes>
+    <PackageReleaseNotes>xx</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
