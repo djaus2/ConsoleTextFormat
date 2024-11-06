@@ -136,7 +136,7 @@ namespace ConsoleTextFormat
         {
             MenuItemsToHide.Add(item.ToLower().Replace("_", " "));
         }
-        public static void ClearHideMenuItems(string item)
+        public static void ClearHideMenuItems()
         {
             MenuItemsToHide = new List<string>();
         }

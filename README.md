@@ -66,8 +66,16 @@ namespace ConsoleApp9
 
 ## Updates
 
-- 2021-09-07: Added ```Fmt.Heading()``` and ```Fmt.RainbowHeading()``` methods to format text as headings.
-- 2021-09-07: Added ```Fmt.Info(topic,info)``` method.
-- 2021-09-13: Added ```Press2Con``` "Press any key to continue" method. Optional messages to pre and post pend. Also, Info() 2nd parameter IS optional.
-- 2021-09-13: Added ```Prompt()``` added. As per Info() but no newline. Heading clears screen. And '_' in heading to blank.
+- 2024-09-07: Added ```Fmt.Heading()``` and ```Fmt.RainbowHeading()``` methods to format text as headings.
+- 2024-09-07: Added ```Fmt.Info(topic,info)``` method.
+- 2024-09-13: Added ```Press2Con``` "Press any key to continue" method. Optional messages to pre and post pend. Also, Info() 2nd parameter IS optional.
+- 2024-09-13: Added ```Prompt()``` added. As per Info() but no newline. Heading clears screen. And '_' in heading to blank.
+- 2024-11-06: Added  HideMenu Items to Layout. So items on end of enum list can not appear in menu.
+``cs
+    Layout.AddHideMenuItems("MaxType");
+    Layout.AddHideMenuItems("Undefined");
+    Testtype = Layout.SelectEnum<ConsoleTestType>((int)Testtype + 1, ref quit, true);
+    Layout.ClearHideMenuItems();
+```
+
 
