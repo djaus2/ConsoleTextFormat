@@ -12,7 +12,7 @@ namespace ConsoleApp9
         static void Main(string[] args)
         {
 
-
+            
             Layout.Heading("Hello, World!",Fmt.Col.yellow, Fmt.Col.blue);
             Layout.RainbowHeading("Hello, World!", Fmt.Col.yellow);
             Layout.Info("This is a topic:", "Information");

@@ -14,8 +14,8 @@
     <PackageTags>console;csharp;dnet;format;text</PackageTags>
     <Copyright>(C)2024 David Jones</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Version>1.2.2</Version>
-    <PackageReleaseNotes>Added ConsoleColor menu and RGB</PackageReleaseNotes>
+    <Version>1.2.3</Version>
+    <PackageReleaseNotes>Fix for: DarkYellow is in ConsoleColors but not in System.Drawing.Color</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 

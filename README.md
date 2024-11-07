@@ -123,5 +123,4 @@ namespace ConsoleApp9
 
     }
 ```
-
-
+- 2024-11-08 Bug Fix: DarkYellow returns (0,0,0) Reason: No DarkYellow in Color wheras is in ConsoleColors. Set to (139,128,0)

@@ -35,13 +35,23 @@ namespace ConsoleTextFormat
 
         /// <summary>
         /// Get RGB values from a ConsoleColor
+        /// Bug Fix: DarkYellow returns (0,0,0)
+        /// Reason: No DarkYellow in Color wheras is in ConsoleColors
         /// </summary>
         /// <param name="col"></param>
         /// <returns></returns>
         public static Tuple<byte, byte, byte> GetRGBfromConsoleColor(ConsoleColor col)
         {
-            Color color = Color.FromName($"{col}");
-            Tuple<byte, byte, byte> rgb = new Tuple<byte, byte, byte>(color.R, color.G, color.B);
+            Tuple<byte, byte, byte> rgb;
+            if (col == ConsoleColor.DarkYellow)
+            {
+                rgb = new Tuple<byte, byte, byte>(139,128,0);
+            }
+            else
+            {
+                Color color = Color.FromName($"{col}");
+                rgb = new Tuple<byte, byte, byte>(color.R, color.G, color.B);
+            }
             return rgb;
         }
 
