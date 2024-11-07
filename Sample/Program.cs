@@ -46,6 +46,9 @@ namespace ConsoleApp9
             Layout.Press2Continue("Wait for completion");
             Layout.Press2Continue("","when ready.");
             Layout.Press2Continue("Wait for completion", "when ready.");
+            var col = ConColors.SelevctaConsoleColor();
+            var rgb = ConColors.GetRGBfromConsoleColor(col);
+            Console.WriteLine($"{rgb.Item1},{rgb.Item2},{rgb.Item3}");
         }
     }
 }

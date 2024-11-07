@@ -1,4 +1,5 @@
-﻿using static ConsoleTextFormat.Fmt;
+﻿using System.Drawing;
+using static ConsoleTextFormat.Fmt;
 
 namespace ConsoleTextFormat
 {
@@ -202,5 +203,7 @@ namespace ConsoleTextFormat
         /// <param name="clr">Color</param>
         /// <returns></returns>
         public static string Bbg(Col clr) { return $"\u001b[{ibbgblack + (int)clr}m"; }
+
+
     }
 }

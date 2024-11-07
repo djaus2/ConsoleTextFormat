@@ -14,8 +14,8 @@
     <PackageTags>console;csharp;dnet;format;text</PackageTags>
     <Copyright>(C)2024 David Jones</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Version>1.1.6</Version>
-    <PackageReleaseNotes>Added MenuItemsToHide in Layout...Incl Bug fix</PackageReleaseNotes>
+    <Version>1.2.2</Version>
+    <PackageReleaseNotes>Added ConsoleColor menu and RGB</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
