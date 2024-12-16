@@ -314,13 +314,15 @@ namespace ConsoleTextFormat
             }
 
             char ch = Prompt4Ch(prompt, (char)('0' + defaultInt), selectFrom, promptcol, infocol);
-            if ((ch >= 'A') && (ch != 'Q') && (ch != 'B'))
+            if ((ch >= 'A') && (ch != 'Q') && (ch != (char)ConsoleKey.LeftArrow))
                 ch = (char)(ch - 'A' + 10 + '0');
-            if(ch == (char)ConsoleKey.LeftArrow)
+           
+            return ch switch
             {
-                return -2;
-            }
-            return (ch == 'Q') ? -1 : ch - '0' - 1;
+                ((char)ConsoleKey.LeftArrow) => -2,
+                'Q' => -1,
+                _ => ch - 48 - 1,
+            };
         }
 
         
