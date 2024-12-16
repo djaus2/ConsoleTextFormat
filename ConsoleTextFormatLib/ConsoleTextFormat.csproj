@@ -15,7 +15,7 @@
     <Copyright>(C)2024 David Jones</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Version>1.2.5</Version>
-    <PackageReleaseNotes>Fix Back is now LeftArrow not B.Added  Layout.PromptWithCSVList(). Fix for: DarkYellow is in ConsoleColors but not in System.Drawing.Color</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix: Back is now LeftArrow not B.Added  Layout.PromptWithCSVList(). Fix for: DarkYellow is in ConsoleColors but not in System.Drawing.Color</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
