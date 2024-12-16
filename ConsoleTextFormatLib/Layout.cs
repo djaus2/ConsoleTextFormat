@@ -2,8 +2,51 @@
 
 namespace ConsoleTextFormat
 {
+    public class Selection
+    {
+        public Selection(int index)
+        {
+            Index = index;
+            Item = "";
+        }
+        public Selection(int index, List<string> items)
+        {
+            Index = index;
+            Item = items[index];
+        }
+
+        public int Index { get; set; }
+        public string Item { get; set; }
+    }
     public static class Layout
     {
+        /// <summary>
+        /// Present a CSV list of items and prompt for selection
+        /// </summary>
+        /// <param name="defaultInt">Default item index</param>
+        /// <param name="csvList">CSV list of items</param>
+        /// <param name="quit">Quit can be an option, returns Index = -1</param>
+        /// <param name="back">Back can be an option, returns index = -2</param>
+        /// <param name="promptcol"></param>
+        /// <param name="infocol"></param>
+        /// <returns>Selection(Index,Item)</returns>
+        public static Selection PromptWithCSVList(int defaultInt, string csvList, bool quit = true, bool back = true, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        {
+            // Can have colon precedinging info
+            // CSV list of items is on end
+            string[] partsArr = csvList.Split(":");
+            List<string> items = (partsArr[partsArr.Length - 1].Split(",")).ToList<string>();
+            int selection = DisplayMenu(defaultInt + 1, items, quit, back);//, promptcol ,  infocol);
+            if (selection < 0)
+                return new Selection(selection);
+            else if (selection >= items.Count)
+            {
+                // This shouldn't happen
+                return new Selection(-3);
+            }
+            else
+                return new Selection(selection, items);
+        }
 
         /// <summary>
         /// Write heading in text color with background color with space btw each letter
@@ -207,7 +250,7 @@ namespace ConsoleTextFormat
         /// <param name="def">index of default value</param>
         /// <param name="quit">Optionally provided. If true can select Q</param>
         /// <returns>Selection, or -1 for Quit</returns>
-        public static int DisplayMenu(int def, List<string> list, bool quit = false)
+        public static int DisplayMenu(int def, List<string> list, bool quit = false, bool back=false)
         {
             for (int i = 1; i <= list.Count(); i++)
             {
@@ -222,7 +265,7 @@ namespace ConsoleTextFormat
                 }
                 Console.WriteLine($"{ch}.\t{list[i - 1]}");
             }
-            var val = Prompt4Num(def, list.Count(), quit);
+            var val = Prompt4Num(def, list.Count(), quit, back);
             return val;
         }
 
@@ -254,7 +297,7 @@ namespace ConsoleTextFormat
         /// <param name="promptcol">Prompt color</param>
         /// <param name="infocol">Selection color</param>
         /// <returns></returns>
-        public static int Prompt4Num(int defaultInt, int maxSelection, bool Quit, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        public static int Prompt4Num(int defaultInt, int maxSelection, bool Quit=false, bool Back=false, Col promptcol = Col.blue, Col infocol = Col.yellow)
         {
             List<char> selectFrom = GenerateListofKeys(maxSelection);
 
@@ -264,14 +307,23 @@ namespace ConsoleTextFormat
                 selectFrom.Add('Q');
                 prompt += " or Q to quit";
             }
+            if (Back)
+            {
+                selectFrom.Add((char)ConsoleKey.LeftArrow); //% is (char)ConsoleKey.LeftArrow
+                prompt += " or <- to go back";
+            }
 
             char ch = Prompt4Ch(prompt, (char)('0' + defaultInt), selectFrom, promptcol, infocol);
-            if ((ch >= 'A') && (ch != 'Q'))
+            if ((ch >= 'A') && (ch != 'Q') && (ch != 'B'))
                 ch = (char)(ch - 'A' + 10 + '0');
+            if(ch == (char)ConsoleKey.LeftArrow)
+            {
+                return -2;
+            }
             return (ch == 'Q') ? -1 : ch - '0' - 1;
         }
 
-
+        
         /// <summary>
         /// Prompt for a single character from a list of characters
         /// Enter return supplied default
@@ -308,7 +360,12 @@ namespace ConsoleTextFormat
                 var keyCode = Console.ReadKey();
                 if (keyCode.Key == ConsoleKey.Enter)
                     break;// Use default
-                tempKey = keyCode.KeyChar;
+                else if (keyCode.Key == ConsoleKey.LeftArrow)
+                    tempKey = (char)ConsoleKey.LeftArrow; //ie '%'
+                else
+                {
+                    tempKey = keyCode.KeyChar;
+                }
                 tempKey = char.ToUpper(tempKey);
                 Console.Write($"\b");
                 Console.Write($"{delete}");
@@ -318,5 +375,6 @@ namespace ConsoleTextFormat
             Console.WriteLine();
             return defaultKey;
         }
+
     }
 }

@@ -49,6 +49,8 @@ namespace ConsoleApp9
             var col = ConColors.SelevctaConsoleColor();
             var rgb = ConColors.GetRGBfromConsoleColor(col);
             Console.WriteLine($"{rgb.Item1},{rgb.Item2},{rgb.Item3}");
+            var selen = Layout.PromptWithCSVList(0, "One,Two,Three,Four", true, true);
+            Layout.Info($"Selection: {selen.Index}. ", selen.Item);
         }
     }
 }

@@ -6,6 +6,9 @@ A simple static class library facilitating
 .NET Console app text formatting in ```Console.Write()``` 
 and ```Console.WriteLine()``` statements without explicitly using escape codes.
 
+## Updates
+    Added Layout.
+
 ## Links
 
 - [Detailed blog post](https://davidjones.sportronics.com.au/coding/ConsoleTextFormat-Formatting_Console_App_Text-coding.html)
@@ -123,3 +126,12 @@ namespace ConsoleApp9
     }
 ```
 - 2024-11-08 Bug Fix: DarkYellow returns (0,0,0) Reason: No DarkYellow in Color wheras is in ConsoleColors. Set to (139,128,0)
+- 2024-12-15 Added ```public static Selection PromptWithList(int defaultInt, string csvList, bool quit = true, bool back = true)``` to Layout.  
+Selection is a class with an int and an string.  
+```cs
+	public class Selection
+	{
+		public int Index { get; set; }
+		public string Item { get; set; }
+	}
+```
