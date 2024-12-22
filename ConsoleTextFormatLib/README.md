@@ -133,5 +133,7 @@ Selection is a class with an int and an string.
 	{
 		public int Index { get; set; }
 		public string Item { get; set; }
+        public int Order {get; set;}
 	}
-```
+- 2024-12-22 Added '''PromptWithDictionaryList()``` which takes a dictionary of key-values instead of a list and returns selected key.  
+  - Keys are not necessarily a sequence. Can therefore select from a list with some items missing.
