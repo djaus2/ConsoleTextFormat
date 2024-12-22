@@ -49,6 +49,54 @@ namespace ConsoleTextFormat
         }
 
         /// <summary>
+        /// Present a CSV list of items and prompt for selection
+        /// </summary>
+        /// <param name="defaultInt">Default item index</param>
+        /// <param name="csvList">CSV list of items</param>
+        /// <param name="quit">Quit can be an option, returns Index = -1</param>
+        /// <param name="back">Back can be an option, returns index = -2</param>
+        /// <param name="promptcol"></param>
+        /// <param name="infocol"></param>
+        /// <returns>Selection(Index,Item)</returns>
+        public static Selection PromptWithDictionaryList(int defaultInt, Dictionary<int, string> dList, bool quit = true, bool back = true, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        {
+            // Can have colon precedinging info
+            // CSV list of items is on end
+
+            List<string> items = dList.Values.ToList<string>();
+            int selection = DisplayMenu(defaultInt + 1, items, quit, back);//, promptcol ,  infocol);
+            if (selection < 0)
+                return new Selection(selection);
+            else if (selection >= items.Count)
+            {
+                // This shouldn't happen
+                return new Selection(-3);
+            }
+            else
+                return GetNthKey(dList,selection);
+        }
+        /// <summary>
+        /// Find the nth key-value pair in a dictionary and return its key
+        /// </summary>
+        /// <param name="dictionary"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        static Selection GetNthKey(Dictionary<int, string> dList, int n)
+        {
+            if (n < 0 || n >= dList.Count)
+                return new Selection(-1); 
+
+                var enumerator = dList.GetEnumerator();
+                for (int i = 0; i <= n; i++)
+                    enumerator.MoveNext();
+
+            return new Selection(enumerator.Current.Key);
+        }
+        
+
+
+
+        /// <summary>
         /// Write heading in text color with background color with space btw each letter
         /// </summary>
         /// <param name="heading">Heading</param>
