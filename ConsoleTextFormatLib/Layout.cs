@@ -102,7 +102,7 @@ namespace ConsoleTextFormat
                 return new Selection(-3);
             }
             else
-                return GetNthKey(dList,selection);
+                return GetNthKey(dList, selection);
         }
         /// <summary>
         /// Find the nth key-value pair in a dictionary and return its key
@@ -113,15 +113,15 @@ namespace ConsoleTextFormat
         static Selection GetNthKey(Dictionary<int, string> dList, int n)
         {
             if (n < 0 || n >= dList.Count)
-                return new Selection(-1); 
+                return new Selection(-1);
 
-                var enumerator = dList.GetEnumerator();
-                for (int i = 0; i <= n; i++)
-                    enumerator.MoveNext();
+            var enumerator = dList.GetEnumerator();
+            for (int i = 0; i <= n; i++)
+                enumerator.MoveNext();
 
-            return new Selection(enumerator.Current.Key,  enumerator.Current.Value,  n );
+            return new Selection(enumerator.Current.Key, enumerator.Current.Value, n);
         }
-        
+
 
 
 
@@ -273,7 +273,7 @@ namespace ConsoleTextFormat
             if (values != null)
             {
 
-               //var Values = values.
+                //var Values = values.
                 foreach (var menuItem in values)
                 {
                     if (menuItem != null)
@@ -306,8 +306,8 @@ namespace ConsoleTextFormat
         {
             Quit = false;
             List<string> list = GenerateEnumMenuList<T>();
-           
-            int index =  DisplayMenu(def, list, quit);
+
+            int index = DisplayMenu(def, list, quit);
             if (index < 0)
             {
                 Quit = true;
@@ -327,7 +327,7 @@ namespace ConsoleTextFormat
         /// <param name="def">index of default value</param>
         /// <param name="quit">Optionally provided. If true can select Q</param>
         /// <returns>Selection, or -1 for Quit</returns>
-        public static int DisplayMenu(int def, List<string> list, bool quit = false, bool back=false)
+        public static int DisplayMenu(int def, List<string> list, bool quit = false, bool back = false)
         {
             for (int i = 1; i <= list.Count(); i++)
             {
@@ -374,7 +374,7 @@ namespace ConsoleTextFormat
         /// <param name="promptcol">Prompt color</param>
         /// <param name="infocol">Selection color</param>
         /// <returns></returns>
-        public static int Prompt4Num(int defaultInt, int maxSelection, bool Quit=false, bool Back=false, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        public static int Prompt4Num(int defaultInt, int maxSelection, bool Quit = false, bool Back = false, Col promptcol = Col.blue, Col infocol = Col.yellow)
         {
             List<char> selectFrom = GenerateListofKeys(maxSelection);
 
@@ -393,7 +393,7 @@ namespace ConsoleTextFormat
             char ch = Prompt4Ch(prompt, (char)('0' + defaultInt), selectFrom, promptcol, infocol);
             if ((ch >= 'A') && (ch != 'Q') && (ch != (char)ConsoleKey.LeftArrow))
                 ch = (char)(ch - 'A' + 10 + '0');
-           
+
             return ch switch
             {
                 ((char)ConsoleKey.LeftArrow) => -2,
@@ -402,7 +402,7 @@ namespace ConsoleTextFormat
             };
         }
 
-        
+
         /// <summary>
         /// Prompt for a single character from a list of characters
         /// Enter return supplied default
@@ -455,5 +455,59 @@ namespace ConsoleTextFormat
             return defaultKey;
         }
 
+
+
+        static int Prompt4IntRange(int min, int max)
+        {
+            Layout.Info("Enter value in range: ", $"{max}...{min}");
+            int num = -0xffff;
+            do
+            {
+                string? res = Console.ReadLine();
+                if (!string.IsNullOrEmpty(res))
+                {
+                    if (int.TryParse(res, out int val))
+                    {
+                        num = val;
+                    }
+                }
+            }
+            while ((num < min) || (num > max));
+            return num;
+        }
+
+        static double Prompt4IntRange(double min, double max)
+        {
+            Layout.Info("Enter value in range: ", $"{max}...{min}");
+            double num = -0xffff;
+            do
+            {
+                string? res = Console.ReadLine();
+                if (!string.IsNullOrEmpty(res))
+                {
+                    if (double.TryParse(res, out double val))
+                    {
+                        num = val;
+                    }
+                }
+            }
+            while ((num < min) || (num > max));
+            return num;
+        }
+
+        static bool Prompt4Bool(double min, double max)
+        {
+            Layout.Info("Enter 1/Y/y/+ for true", " or 0/N/n/- for false");
+            ConsoleKeyInfo key;
+
+            List<char> charsTrue = new List<char> { '1', 'Y', 'y', '+' };
+            List<char> charsFalse = new List<char> { '0', 'N', 'n', '-' };
+            do
+            {
+                key = Console.ReadKey();
+            }
+            while ((!charsTrue.Contains(key.KeyChar)) && (!charsTrue.Contains(key.KeyChar)));
+            return (charsTrue.Contains(key.KeyChar));
+        }
     }
 }
