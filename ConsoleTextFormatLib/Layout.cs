@@ -457,7 +457,7 @@ namespace ConsoleTextFormat
 
 
 
-        static int Prompt4IntRange(int min, int max)
+        public static int Prompt4IntRange(int min, int max)
         {
             Layout.Info("Enter value in range: ", $"{max}...{min}");
             int num = -0xffff;
@@ -476,7 +476,7 @@ namespace ConsoleTextFormat
             return num;
         }
 
-        static double Prompt4IntRange(double min, double max)
+        public static double Prompt4IntRange(double min, double max)
         {
             Layout.Info("Enter value in range: ", $"{max}...{min}");
             double num = -0xffff;
@@ -495,7 +495,7 @@ namespace ConsoleTextFormat
             return num;
         }
 
-        static bool Prompt4Bool(double min, double max)
+        public static bool Prompt4Bool()
         {
             Layout.Info("Enter 1/Y/y/+ for true", " or 0/N/n/- for false");
             ConsoleKeyInfo key;
