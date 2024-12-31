@@ -506,7 +506,7 @@ namespace ConsoleTextFormat
             {
                 key = Console.ReadKey();
             }
-            while ((!charsTrue.Contains(key.KeyChar)) && (!charsTrue.Contains(key.KeyChar)));
+            while ((!charsFalse.Contains(key.KeyChar)) && (!charsTrue.Contains(key.KeyChar)));
             return (charsTrue.Contains(key.KeyChar));
         }
     }
