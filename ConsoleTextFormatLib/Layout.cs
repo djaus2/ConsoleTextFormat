@@ -378,7 +378,7 @@ namespace ConsoleTextFormat
         {
             List<char> selectFrom = GenerateListofKeys(maxSelection);
 
-            string prompt = $"DisplayMenu from 1 ... {selectFrom.Last()}";
+            string prompt = $"Select from 1 ... {selectFrom.Last()}";
             if (Quit)
             {
                 selectFrom.Add('Q');
@@ -457,9 +457,17 @@ namespace ConsoleTextFormat
 
 
 
-        public static int Prompt4IntRange(int min, int max)
+        public static int Prompt4IntInRange(int min, int max, int def = -1)
         {
-            Layout.Info("Enter value in range: ", $"{min}...{max}");
+            if (def == -1)
+            {
+                def = min;
+            }
+            if ((def < min) || (def > max)) 
+            {
+                def = min;
+            }
+            Layout.Info("Enter value in range: ", $"{min}...{max} Default: {def}");
             int num = -0xffff;
             do
             {
@@ -471,24 +479,42 @@ namespace ConsoleTextFormat
                         num = val;
                     }
                 }
+                else
+                {
+                    num = def;
+                }
             }
             while ((num < min) || (num > max));
             return num;
         }
 
-        public static double Prompt4IntRange(double min, double max)
+        public static double Prompt4DoubleInRange(double min, double max, double? def = -0xffff)
         {
             Layout.Info("Enter value in range: ", $"{min}...{max}");
             double num = -0xffff;
+            if (def == num)
+            {
+                def = min;
+            }
+            if ((def < min) || (def > max))
+            {
+                def = min;
+            }
+            Layout.Info("Enter value in range: ", $"{min}...{max}  Default: {def}");
             do
             {
                 string? res = Console.ReadLine();
                 if (!string.IsNullOrEmpty(res))
                 {
-                    if (double.TryParse(res, out double val))
+                    if (int.TryParse(res, out int val))
                     {
                         num = val;
                     }
+                }
+                else
+                {
+                    if(def != null)
+                        num = (double)def;
                 }
             }
             while ((num < min) || (num > max));
