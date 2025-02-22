@@ -402,6 +402,42 @@ namespace ConsoleTextFormat
             };
         }
 
+        public static string Prompt4String(string prompt, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        {
+            Reset();
+            Console.Write($"{fg(promptcol)}{prompt}: ");
+            string? res = Console.ReadLine();
+            Reset();
+            if (res == null)
+                return "";
+            return res;
+        }
+
+        public static List<int> Prompt4Nums(int numValues, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        {
+            string prompt = $"Enter CSV list of values (int)";
+
+            string csv = Prompt4String(prompt, promptcol, infocol);
+            string[] parts = csv.Split(",");
+            if(parts.Length != numValues)
+            {
+                return new List<int> { -1 };
+            }
+            List<int> intList = new List<int>();
+            foreach (string item in parts)
+            {
+                if (int.TryParse(item, out int number))
+                {
+                    intList.Add(number);
+                }
+            }
+            if (intList.Count != numValues)
+            {
+                return new List<int> { -1 };
+            }
+            return intList;
+        }
+
 
         /// <summary>
         /// Prompt for a single character from a list of characters
