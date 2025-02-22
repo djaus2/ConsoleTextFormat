@@ -438,6 +438,50 @@ namespace ConsoleTextFormat
             return intList;
         }
 
+        public static List<int> Prompt4NumswithMaxes(int numValues,string csvListMaxes, Col promptcol = Col.blue, Col infocol = Col.yellow)
+        {
+            string[] parts = csvListMaxes.Split(",");
+            if (parts.Length != numValues)
+            {
+                return new List<int> { -1 };
+            }
+            List<int> intListMazes = new List<int>();
+            foreach (string item in parts)
+            {
+                if (int.TryParse(item, out int number))
+                {
+                    intListMazes.Add(number);
+                }
+            }
+            if (intListMazes.Count != numValues)
+            {
+                return new List<int> { -1 };
+            }
+            List<int> values = new List<int>();
+            while( values.Count() != numValues)
+            {
+                values = Prompt4Nums(numValues, promptcol, infocol);
+                if (values.Count != numValues)
+                {
+                    continue;
+                }
+                for (int i = 0; i < numValues; i++)
+                {
+                    if (values[i] < 0 || values[i] > intListMazes[i])
+                    {
+                        values = new List<int>();
+                        break;
+                    }
+                }
+
+            }
+            return values;
+        }
+
+
+
+
+
 
         /// <summary>
         /// Prompt for a single character from a list of characters
