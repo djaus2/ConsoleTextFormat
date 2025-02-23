@@ -686,7 +686,7 @@ namespace ConsoleTextFormat
             List<int> values = new List<int>();
             while (values.Count() != numValues)
             {
-                values = Prompt4Nums(numValues, out textOnEndStr, textOnEnd, promptcol, infocol);
+                values = Prompt4NumsandText(numValues, out textOnEndStr, textOnEnd, promptcol, infocol);
                 if (values.Count != numValues)
                 {
                     Info(msg);
