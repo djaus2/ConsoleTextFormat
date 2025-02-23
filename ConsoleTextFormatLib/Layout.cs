@@ -622,8 +622,12 @@ namespace ConsoleTextFormat
                     Info(msg);
                     continue;
                 }
-                textOnEndStr = parts.Last();
-                var parts2 = parts.SkipLast(1);
+                string[] parts2 = parts;
+                if (textOnEnd)
+                {
+                    textOnEndStr = parts.Last();
+                    parts2 = parts.SkipLast(1).ToArray();
+                }
                 intList = new List<int>();
                 foreach (string item in parts2)
                 {
